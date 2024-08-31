@@ -10,8 +10,7 @@ This repository contains the code and dataset used to fine-tune a language model
 - [Training Process](#training-process)
 - [Evaluation](#evaluation)
 - [Usage](#usage)
-- [Acknowledgments](#acknowledgments)
-- [License](#license)
+
 
 
 
