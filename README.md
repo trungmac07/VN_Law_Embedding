@@ -81,7 +81,7 @@ The model's performance was evaluated using an Information Retrieval evaluator, 
 | **dim_128_cosine_accuracy@3** | 0.600                 | 0.708              | 0.867              |
 | **dim_128_cosine_accuracy@5** | 0.667               | 0.784              | 0.907              |
 | **dim_128_cosine_accuracy@10**| 0.748               | 0.853              | 0.969              |
-| **dim_128_cosine_precision@1**| 0.390                | 0.532              | 0.712              |
+| **dim_128_cosine_precision@1**| 0.390                | 0.532              | 0.701              |
 | **dim_128_cosine_precision@3**| 0.279               | 0.361              | 0.412              |
 | **dim_128_cosine_precision@5**| 0.211               | 0.270              | 0.230              |
 | **dim_128_cosine_precision@10**| 0.136              | 0.169              | 0.158              |
