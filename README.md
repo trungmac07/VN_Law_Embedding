@@ -77,18 +77,18 @@ The model's performance was evaluated using an Information Retrieval evaluator, 
 
 |Metrics|Base Model|Train on Zalo's dataset| Train on both datasets|
 |-|-:|-:|-:|
-| **dim_128_cosine_accuracy@1** | 0.390                | 0.532              | 0.656              |
-| **dim_128_cosine_accuracy@3** | 0.600                 | 0.708              | 0.843              |
-| **dim_128_cosine_accuracy@5** | 0.667               | 0.784              | 0.887              |
-| **dim_128_cosine_accuracy@10**| 0.748               | 0.853              | 0.947              |
-| **dim_128_cosine_precision@1**| 0.390                | 0.532              | 0.656              |
-| **dim_128_cosine_precision@3**| 0.279               | 0.361              | 0.442              |
-| **dim_128_cosine_precision@5**| 0.211               | 0.270              | 0.330              |
-| **dim_128_cosine_precision@10**| 0.136              | 0.169              | 0.198              |
-| **dim_128_cosine_recall@1**   | 0.223               | 0.302              | 0.370              |
-| **dim_128_cosine_recall@3**   | 0.420              | 0.532              | 0.648              |
-| **dim_128_cosine_recall@5**   | 0.508               | 0.633              | 0.762              |
-| **dim_128_cosine_recall@10**  | 0.621               | 0.757              | 0.882             |
-| **dim_128_cosine_ndcg@10**     | 0.496               | 0.628              | 0.753             |
-| **dim_128_cosine_mrr@10**      | 0.511              | 0.636              | 0.76              |
-| **dim_128_cosine_map@100**     | 0.434              | 0.565              | 0.685  
+| **dim_128_cosine_accuracy@1** | 0.390                | 0.532              | 0.701              |
+| **dim_128_cosine_accuracy@3** | 0.600                 | 0.708              | 0.867              |
+| **dim_128_cosine_accuracy@5** | 0.667               | 0.784              | 0.907              |
+| **dim_128_cosine_accuracy@10**| 0.748               | 0.853              | 0.969              |
+| **dim_128_cosine_precision@1**| 0.390                | 0.532              | 0.712              |
+| **dim_128_cosine_precision@3**| 0.279               | 0.361              | 0.412              |
+| **dim_128_cosine_precision@5**| 0.211               | 0.270              | 0.230              |
+| **dim_128_cosine_precision@10**| 0.136              | 0.169              | 0.158              |
+| **dim_128_cosine_recall@1**   | 0.223               | 0.302              | 0.470              |
+| **dim_128_cosine_recall@3**   | 0.420              | 0.532              | 0.698              |
+| **dim_128_cosine_recall@5**   | 0.508               | 0.633              | 0.772              |
+| **dim_128_cosine_recall@10**  | 0.621               | 0.757              | 0.902             |
+| **dim_128_cosine_ndcg@10**     | 0.496               | 0.628              | 0.793             |
+| **dim_128_cosine_mrr@10**      | 0.511              | 0.636              | 0.810              |
+| **dim_128_cosine_map@100**     | 0.434              | 0.565              | 0.727  
