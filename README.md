@@ -31,7 +31,7 @@ The fine-tuning process leverages **Matryoshka Loss** combined with **Multi Nega
 ## Dataset
 
 The raw dataset take from:
-- [`Legal conversation v2](https://huggingface.co/datasets/chillies/legal-conversation-v2): Contains pairs of a question and a corresponding answer by a human lawyer.
+- [`Legal conversation v2`](https://huggingface.co/datasets/chillies/legal-conversation-v2): Contains pairs of a question and a corresponding answer by a human lawyer.
 - [`Zalo AI 2021`](https://www.kaggle.com/datasets/hariwh0/zaloai2021-legal-text-retrieval/code): Contains queries, corpus and relationship between queries with its relevant documents.
 
 The dataset used for fine-tuning was synthetically generated and preprocessed by myself. It is specifically tailored for the task of question-document similarity within the context of Vietnamese law.
