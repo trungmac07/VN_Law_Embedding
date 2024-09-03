@@ -19,7 +19,6 @@ This repository contains the code and dataset used to fine-tune a language model
 The base model used is [`hiieu/halong_embedding`](https://huggingface.co/hiieu/halong_embedding) which is fine-tuned from `intfloat/multilingual-e5-base` in Vietnamese dataset. 
 
 
-
 The fine-tuning process leverages **Matryoshka Loss** combined with **Multi Negative Ranking Loss** to optimize the model for the task of document retrieval.
 
 ### Loss Functions
@@ -37,13 +36,37 @@ The dataset used for fine-tuning was synthetically generated and preprocessed by
 
 This dataset consists of carefully constructed pairs of legal questions and their corresponding documents, ensuring it is highly relevant for training the model on this specific task.
 
+### Preprocessed Dataset
+
+The preprocessed dataset is available on [Google Drive](https://drive.google.com/drive/folders/1LK6_fg9Q1m8D6auLGP_yYw_qVlho-bop?usp=sharing). It includes three main components: the corpus, questions, and the relationships between questions and documents.
+
+- Files **with the number 2** represent data sourced from [`Legal Conversation v2`](https://huggingface.co/datasets/chillies/legal-conversation-v2).
+
+- Files **without the number 2** represent data sourced from the [`Zalo AI 2021`](https://www.kaggle.com/datasets/hariwh0/zaloai2021-legal-text-retrieval/code) competition.
+
 ### Dataset Structure
+
+- **`corpus` and `corpus_2`**: Contain document IDs and their corresponding document contents.
+- **`questions` and `questions_2`**: Contain question IDs and their corresponding questions.
+- **`qnc` and `qnc_2`**: Each row contains a question ID and a relevant document ID that can be used to answer the question.
+
 
 - **Questions**: Legal queries in Vietnamese.
 - **Documents**: Relevant legal documents or sections of legal documents.
 
-## Evaluation
 
+## Training
+
+To fine-tune model for embedding similarity between legal question and relevant documents, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Upload your dataset to Google Drive.
+3. Open the provided notebook in Google Colab to take advantage of robust GPU support and resources. Update the file paths in the notebook to point to your cloud-hosted dataset.
+4. Execute the notebook to begin the training and evaluation process.
+
+
+
+## Evaluation
 
 The model's performance was evaluated using an Information Retrieval evaluator, focusing on its ability to accurately retrieve the correct legal document for a given question. Key evaluation metrics include:
 
@@ -51,13 +74,21 @@ The model's performance was evaluated using an Information Retrieval evaluator, 
 - **Recall@K**: The percentage of correct documents retrieved within the top K results.
 - **Mean Reciprocal Rank (MRR)**: The average of the reciprocal ranks of the correct documents.
 
-## Usage
 
-To use the fine-tuned model for retrieving legal documents based on a question, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Upload your dataset to a cloud storage service, such as Google Drive.
-3. Open the provided notebook in Google Colab to take advantage of robust GPU support and resources. Update the file paths in the notebook to point to your cloud-hosted dataset.
-4. Execute the notebook to begin the training and evaluation process.
-
-
+|Metrics|Base Model|Train on Zalo's dataset| Train on both datasets|
+|-|-:|-:|-:|
+| **dim_128_cosine_accuracy@1** | 0.390                | 0.532              | 0.656              |
+| **dim_128_cosine_accuracy@3** | 0.600                 | 0.708              | 0.843              |
+| **dim_128_cosine_accuracy@5** | 0.667               | 0.784              | 0.887              |
+| **dim_128_cosine_accuracy@10**| 0.748               | 0.853              | 0.947              |
+| **dim_128_cosine_precision@1**| 0.390                | 0.532              | 0.656              |
+| **dim_128_cosine_precision@3**| 0.279               | 0.361              | 0.442              |
+| **dim_128_cosine_precision@5**| 0.211               | 0.270              | 0.330              |
+| **dim_128_cosine_precision@10**| 0.136              | 0.169              | 0.198              |
+| **dim_128_cosine_recall@1**   | 0.223               | 0.302              | 0.370              |
+| **dim_128_cosine_recall@3**   | 0.420              | 0.532              | 0.648              |
+| **dim_128_cosine_recall@5**   | 0.508               | 0.633              | 0.762              |
+| **dim_128_cosine_recall@10**  | 0.621               | 0.757              | 0.882             |
+| **dim_128_cosine_ndcg@10**     | 0.496               | 0.628              | 0.753             |
+| **dim_128_cosine_mrr@10**      | 0.511              | 0.636              | 0.76              |
+| **dim_128_cosine_map@100**     | 0.434              | 0.565              | 0.685  
